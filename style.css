@@ -1,0 +1,167 @@
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Roboto';
+    
+}
+
+.container{
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+header,footer{
+/* From https://css.glass */
+background: rgb(0, 0, 0);
+border-radius: 0 0 16px 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(48, 46, 46, 0.06);;
+    padding: 1.5rem;
+   /*  background-color: rgb(21, 25, 31); */
+    width: 100%;
+    z-index: 1;
+}
+
+header{
+    
+}
+
+header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    color: aliceblue;
+    margin-bottom: 10rem;
+}
+
+header .name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.name .github{
+    font-size: 1.5rem;
+}
+
+header .home_btn{
+    color: white;
+}
+header .home_btn:hover{
+    transform: scale(1.3);
+    transition: 1s;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    border-radius: 16px 16px 0 0;
+}
+
+footer .logo{
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.searchbar #search{
+    width: 70%;
+    padding: 1rem;
+   font-size: 1rem;
+background: rgba(48, 46, 46, 0.26);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(48, 46, 46, 0.06);
+}
+
+.searchbar button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 3rem;
+    transform: rotate(-45deg);
+}
+.searchbar button:hover{
+   transform: rotate(10deg);
+   transition: 0.5s;
+}
+
+.search_result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 88%;
+    padding: 1rem;
+    border-top: 1px solid  grey;
+    gap: 1rem;
+}
+
+.search_result .result{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    background: #ffffff;
+    box-shadow:  5px 5px 10px #bebebe,
+                 -5px -5px 10px #ffffff;
+}
+
+.search_result .result .avatar{
+    width: 20%;
+}
+.search_result .result .avatar img{
+    width: 100%;
+    border-radius: 100%;
+}
+.search_result .result .user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.search_result .result .user_name{
+    font-size: 1rem;
+}
+
+.search_result .result .user button{
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    color: grey;
+    font-size: 0.9rem;
+}
+.search_result .result .user button:hover{
+  color: rgb(3, 62, 255);
+}
+
+
+
