@@ -11,6 +11,7 @@ const AVATAR = document.querySelector(".search_result .result .avatar img");
 
 SEARCH_BTN.addEventListener("click", (e)=>{
   e.preventDefault();
+  RESULT_SECTION.innerHTML = "";
   let username = inputField.value;
   let API_URL = `https://api.github.com/search/users?q=${username}`;
   
