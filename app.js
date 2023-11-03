@@ -44,14 +44,34 @@ SEARCH_BTN.addEventListener("click", (e)=>{
       result.appendChild(user);
 
       RESULT_SECTION.appendChild(result);
-
-
-
-      
     });
 
   
      
 }
 fetchUsers();
-})
+});
+ 
+RESULT_SECTION.addEventListener("click", (e)=>{
+  e.preventDefault();
+  
+
+if(e.target.tagName=="BUTTON"){
+  //PROFILE FETCH
+  let PROFILE_URL = `https://api.github.com/users/${e.target.previousElementSibling.textContent}`;
+  let fetchProfile = async ()=>{
+    let response  = await fetch(PROFILE_URL);
+    let data = await response.json();
+    console.log(data);
+
+//REPO FETCH
+    let REPO_URL = `https://api.github.com/users/${e.target.previousElementSibling.textContent}/repos`;
+    let repoFetch  = await fetch(REPO_URL);
+    let repodata = await repoFetch.json();
+    console.log(repodata);
+  }
+  fetchProfile();
+}
+ 
+});
+ 
