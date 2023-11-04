@@ -63,8 +63,81 @@ header {
     left: 2rem;
     font-size: 1.3rem;
 }
+
 .innerContainer .mainAvatar .userName{
     position: absolute;
     bottom: 2.3rem;
     left: 2rem;
+}
+
+.innerContainer .userDetails .profileContainer .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title .userbadge{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+.title h1{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.userbadge .userTag{
+  padding: 0.3rem;
+  border-radius: 10px;
+  background-color: rgba(0, 255, 149, 0.664);
+  color: rgb(0, 0, 43);
+}
+.userbadge .hireable{
+  padding: 0.3rem;
+  border-radius: 10px;
+  background-color: rgba(0, 17, 255, 0.596);
+  color:  rgb(0, 0, 43) ;
+}
+
+.profileContainer .gitHubLink{
+  width: 55%;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(53, 52, 52);
+}
+.profileContainer .gitHubLink:hover{
+  background-color: rgba(10, 10, 22, 0.438);
+  color: white;
+  transition: 500ms
+}
+
+.gitHubLink a{
+  text-decoration: none;
+  color: rgb(41, 41, 41);
+}
+
+.userSocials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.userSocials .location{
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+}
+.userSocials .Website{
+  flex-grow: 1;
+  display: flex;
+flex-direction: column;
+}
+.userSocials .Twitter{
+  flex-grow: 1;
+  display: flex;
+flex-direction: column;
 }
