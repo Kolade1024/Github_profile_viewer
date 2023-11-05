@@ -119,25 +119,164 @@ header {
   color: rgb(41, 41, 41);
 }
 
+
+
 .userSocials{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
   flex-wrap: wrap;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.userSocials .location{
-flex-grow: 1;
+.userSocials .location, .userSocials .Website{
+  gap: 0.7rem;
 display: flex;
 flex-direction: column;
 }
-.userSocials .Website{
-  flex-grow: 1;
-  display: flex;
-flex-direction: column;
+
+.userSocials .location{
+  border-right: 1px solid grey;
+  padding-right: 2.7rem;
 }
-.userSocials .Twitter{
-  flex-grow: 1;
-  display: flex;
-flex-direction: column;
+
+.userSocials .name{
+  color: grey;
 }
+.userSocials .address{
+  font-weight: 700;
+}
+
+.userDetails .accountDetails{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.accountDetails{
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.accountDetails span{
+  display: block;
+}
+.userDetails .accountDetails div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userDetails .accountDetails div  .amount{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.userDetails .accountDetails div  .amount .text{
+ color: grey;
+ text-align: start;
+}
+.userDetails .accountDetails div  .amount .number{
+  font-family: Impact;
+  font-size: 1.5rem;
+  font-weight: 600;
+ color: rgb(0, 0, 0);
+ width: 100%;
+}
+
+.repositories{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.repositories h1 {
+  margin-top: 2.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.repositories .repo_Card .badges{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.repositories .repo_Card{
+  gap: 0.8rem;
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+.repositories .repo_Card:hover{
+  background-color: rgb(221, 221, 221);
+  transition: 500ms;
+}
+
+.repositories .repo_Card a{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: start;
+gap: 1rem;
+text-decoration: none;
+font-size: 1.2rem;
+color: rgb(51, 51, 51);
+font-weight: 700;
+}
+
+.repositories .repo_Card p{
+color: grey;
+}
+.repositories .repo_Card .badges{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+}
+
+.repositories .repo_Card .badges div{
+  padding: 2px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  gap: 0.6rem;
+}
+.repositories .repo_Card .badges .repoDetails1{
+background-color: rgba(105, 105, 255, 0.788);
+
+}
+.repositories .repo_Card .badges .repoDetails2{
+background-color: rgba(0, 255, 21, 0.432);
+}
+
+.repositories .repo_Card .badges .repoDetails3{
+background-color: rgba(255, 0, 0, 0.774);
+}
+.repositories .repo_Card .badges .repoDetails4{
+background-color: rgba(255, 208, 0, 0.685);
+}
+
+
+
+
