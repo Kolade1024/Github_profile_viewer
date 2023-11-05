@@ -4,7 +4,9 @@ const inputField = SEARCH_BAR.querySelector("#search");
 const RESULT_SECTION = document.querySelector(".search_result")
 //SEARCH RESULT
 const AVATAR = document.querySelector(".search_result .result .avatar img");
-
+const NextPage = document.querySelector(".innerContainer");
+const backBTN = NextPage.querySelector(".return");
+const HEADER = document.querySelector(".container header");
 
 
 
@@ -59,10 +61,19 @@ RESULT_SECTION.addEventListener("click", (e)=>{
 if(e.target.tagName=="BUTTON"){
   //PROFILE FETCH
   let PROFILE_URL = `https://api.github.com/users/${e.target.previousElementSibling.textContent}`;
+
+  HEADER.style.marginBottom = "3rem";
+  SEARCH_BAR.style.display = "none";
+  RESULT_SECTION.style.display = "none";
+  NextPage.style.display = "flex";
+
+
   let fetchProfile = async ()=>{
     let response  = await fetch(PROFILE_URL);
     let data = await response.json();
     console.log(data);
+    let avatarContainer = document.querySelector(".innerContainer .mainAvatar");
+    avatarContainer.style.backgroundImage = `url(${data.avatar_url})`;
 
 //REPO FETCH
     let REPO_URL = `https://api.github.com/users/${e.target.previousElementSibling.textContent}/repos`;
@@ -74,4 +85,13 @@ if(e.target.tagName=="BUTTON"){
 }
  
 });
+
+
+
+backBTN.addEventListener("click",(e)=>{
+  SEARCH_BAR.style.display = "flex";
+  RESULT_SECTION.style.display = "flex";
+  NextPage.style.display = "none";
+  HEADER.style.marginBottom = "10rem";
+})
  

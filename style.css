@@ -12,7 +12,7 @@ body {
 .container {
   min-height: 100vh;
   background-color: rgb(255, 255, 255);
-  display: none;
+  display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -28,7 +28,7 @@ footer {
   width: 100%;
   z-index: 1;
 }
-
+/* ADJUST WITH JS */
 header {
   display: flex;
   align-content: center;
@@ -36,6 +36,7 @@ header {
   color: aliceblue;
   margin-bottom: 10rem;
 }
+
 
 header .name {
   display: flex;

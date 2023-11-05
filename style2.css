@@ -1,12 +1,15 @@
+
+/* Adjust with Javascript */
 header {
   margin-bottom: 3rem;
 }
 
+
 .innerContainer {
-    font-family: "Roboto";
+  font-family: "Roboto";
   width: 100%;
   padding: 1rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 1rem;
 }
@@ -18,7 +21,8 @@ header {
   outline: none;
   padding: 0.8rem;
   border-radius: 0.5rem;
-  border: none;width: 50%;
+  border: none;
+  width: 50%;
 }
 
 .innerContainer .return:hover {
@@ -27,47 +31,44 @@ header {
   transition: 500ms;
 }
 
-
-.innerContainer .mainAvatar{
-    width: 100%;
-    border-radius: 1rem;
-    background-image: url("https://avatars.githubusercontent.com/u/32314456?v=4");
-    height: 22rem;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    position: relative;
-    z-index: -1;
-    
+.innerContainer .mainAvatar {
+  width: 100%;
+  border-radius: 1rem;
+  background-image: url("https://avatars.githubusercontent.com/u/32314456?v=4");
+  height: 22rem;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  z-index: -1;
 }
-.innerContainer .accent{
-    width: 100%;
-    border-radius: 1rem;
-    background-color: rgba(85, 85, 85, 0.301);
-    height: 22rem;
-    display: flex;
-    flex-direction: column;
-    color: white;
-     
+.innerContainer .accent {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(85, 85, 85, 0.301);
+  height: 22rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
-.innerContainer .accent:hover{
-    background-color:transparent;
-    transition: 500ms; 
+.innerContainer .accent:hover {
+  background-color: transparent;
+  transition: 500ms;
 }
 
-.innerContainer .mainAvatar .Name{
-    font-weight: 700;
-    position: absolute;
-    bottom: 4rem;
-    left: 2rem;
-    font-size: 1.3rem;
+.innerContainer .mainAvatar .Name {
+  font-weight: 700;
+  position: absolute;
+  bottom: 4rem;
+  left: 2rem;
+  font-size: 1.3rem;
 }
 
-.innerContainer .mainAvatar .userName{
-    position: absolute;
-    bottom: 2.3rem;
-    left: 2rem;
+.innerContainer .mainAvatar .userName {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 2rem;
 }
 
 .innerContainer .userDetails .profileContainer .title {
@@ -76,31 +77,31 @@ header {
   justify-content: space-between;
 }
 
-.title .userbadge{
+.title .userbadge {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 40%;
 }
-.title h1{
+.title h1 {
   font-size: 2rem;
   font-weight: 600;
 }
 
-.userbadge .userTag{
+.userbadge .userTag {
   padding: 0.3rem;
   border-radius: 10px;
   background-color: rgba(0, 255, 149, 0.664);
   color: rgb(0, 0, 43);
 }
-.userbadge .hireable{
+.userbadge .hireable {
   padding: 0.3rem;
   border-radius: 10px;
   background-color: rgba(0, 17, 255, 0.596);
-  color:  rgb(0, 0, 43) ;
+  color: rgb(0, 0, 43);
 }
 
-.profileContainer .gitHubLink{
+.profileContainer .gitHubLink {
   width: 55%;
   padding: 1rem;
   margin-top: 1rem;
@@ -108,20 +109,18 @@ header {
   border-radius: 1rem;
   border: 1px solid rgb(53, 52, 52);
 }
-.profileContainer .gitHubLink:hover{
+.profileContainer .gitHubLink:hover {
   background-color: rgba(10, 10, 22, 0.438);
   color: white;
-  transition: 500ms
+  transition: 500ms;
 }
 
-.gitHubLink a{
+.gitHubLink a {
   text-decoration: none;
   color: rgb(41, 41, 41);
 }
 
-
-
-.userSocials{
+.userSocials {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,66 +132,65 @@ header {
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.userSocials .location, .userSocials .Website{
+.userSocials .location,
+.userSocials .Website {
   gap: 0.7rem;
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.userSocials .location{
+.userSocials .location {
   border-right: 1px solid grey;
   padding-right: 2.7rem;
 }
 
-.userSocials .name{
+.userSocials .name {
   color: grey;
 }
-.userSocials .address{
+.userSocials .address {
   font-weight: 700;
 }
 
-.userDetails .accountDetails{
+.userDetails .accountDetails {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
 }
 
-.accountDetails{
+.accountDetails {
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.accountDetails span{
+.accountDetails span {
   display: block;
 }
-.userDetails .accountDetails div{
+.userDetails .accountDetails div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.userDetails .accountDetails div  .amount{
+.userDetails .accountDetails div .amount {
   display: flex;
   flex-direction: column;
 }
 
-
-
-.userDetails .accountDetails div  .amount .text{
- color: grey;
- text-align: start;
+.userDetails .accountDetails div .amount .text {
+  color: grey;
+  text-align: start;
 }
-.userDetails .accountDetails div  .amount .number{
+.userDetails .accountDetails div .amount .number {
   font-family: Impact;
   font-size: 1.5rem;
   font-weight: 600;
- color: rgb(0, 0, 0);
- width: 100%;
+  color: rgb(0, 0, 0);
+  width: 100%;
 }
 
-.repositories{
+.repositories {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,13 +204,13 @@ flex-direction: column;
   text-align: center;
 }
 
-.repositories .repo_Card .badges{
+.repositories .repo_Card .badges {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.repositories .repo_Card{
+.repositories .repo_Card {
   gap: 0.8rem;
   border-radius: 1rem;
   background-color: rgb(255, 255, 255);
@@ -223,37 +221,36 @@ flex-direction: column;
   flex-direction: column;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-
 }
 
-.repositories .repo_Card:hover{
+.repositories .repo_Card:hover {
   background-color: rgb(221, 221, 221);
   transition: 500ms;
 }
 
-.repositories .repo_Card a{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: start;
-gap: 1rem;
-text-decoration: none;
-font-size: 1.2rem;
-color: rgb(51, 51, 51);
-font-weight: 700;
+.repositories .repo_Card a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(51, 51, 51);
+  font-weight: 700;
 }
 
-.repositories .repo_Card p{
-color: grey;
+.repositories .repo_Card p {
+  color: grey;
 }
-.repositories .repo_Card .badges{
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 1rem;
+.repositories .repo_Card .badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.repositories .repo_Card .badges div{
+.repositories .repo_Card .badges div {
   padding: 2px;
   border-radius: 7px;
   display: flex;
@@ -262,21 +259,16 @@ gap: 1rem;
   width: 100%;
   gap: 0.6rem;
 }
-.repositories .repo_Card .badges .repoDetails1{
-background-color: rgba(105, 105, 255, 0.788);
-
+.repositories .repo_Card .badges .repoDetails1 {
+  background-color: rgba(105, 105, 255, 0.788);
 }
-.repositories .repo_Card .badges .repoDetails2{
-background-color: rgba(0, 255, 21, 0.432);
-}
-
-.repositories .repo_Card .badges .repoDetails3{
-background-color: rgba(255, 0, 0, 0.774);
-}
-.repositories .repo_Card .badges .repoDetails4{
-background-color: rgba(255, 208, 0, 0.685);
+.repositories .repo_Card .badges .repoDetails2 {
+  background-color: rgba(0, 255, 21, 0.432);
 }
 
-
-
-
+.repositories .repo_Card .badges .repoDetails3 {
+  background-color: rgba(255, 0, 0, 0.774);
+}
+.repositories .repo_Card .badges .repoDetails4 {
+  background-color: rgba(255, 208, 0, 0.685);
+}
