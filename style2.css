@@ -32,18 +32,7 @@ header {
 }
 
 .innerContainer .mainAvatar {
-  width: 100%;
-  border-radius: 1rem;
-  background-image: url("https://avatars.githubusercontent.com/u/32314456?v=4");
-  height: 22rem;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  position: relative;
-  z-index: -1;
-}
-.innerContainer .accent {
+ 
   width: 100%;
   border-radius: 1rem;
   background-color: rgba(85, 85, 85, 0.301);
@@ -51,8 +40,20 @@ header {
   display: flex;
   flex-direction: column;
   color: white;
+  
 }
-.innerContainer .accent:hover {
+.innerContainer .accent {
+  width: 100%;
+  border-radius: 1rem;
+  background-image: /* url("https://avatars.githubusercontent.com/u/32314456?v=4") */;
+  height: 22rem;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: relative;
+}
+.innerContainer .mainAvatar:hover {
   background-color: transparent;
   transition: 500ms;
 }

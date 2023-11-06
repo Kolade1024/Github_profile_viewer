@@ -72,8 +72,30 @@ if(e.target.tagName=="BUTTON"){
     let response  = await fetch(PROFILE_URL);
     let data = await response.json();
     console.log(data);
-    let avatarContainer = document.querySelector(".innerContainer .mainAvatar");
-    avatarContainer.style.backgroundImage = `url(${data.avatar_url})`;
+
+    let avatarContainer = document.querySelector(".innerContainer .accent");
+    let avatarName = document.querySelector(".innerContainer .mainAvatar .Name");
+    let avatarUserName = document.querySelector(".innerContainer .mainAvatar .userName");
+    let mainName = document.querySelector(".userDetails .profileContainer h1");
+    let userTag = document.querySelector(".userDetails .profileContainer .userbadge .userTag");
+    let Hireable = document.querySelector(".userDetails .profileContainer .userbadge .hireable");
+    let jobTitle = document.querySelector(".userDetails .profileContainer .jobTitle");
+    let githubLink = document.querySelector(".userDetails .profileContainer .gitHubLink a");
+    avatarContainer.style.backgroundImage = `url(${data.avatar_url})`; 
+    avatarName.textContent = data.name;
+    avatarUserName.textContent = data.login;
+    mainName.textContent = data.name;
+    jobTitle.textContent = data.bio;
+    userTag.textContent = data.type;
+
+    if(data.hireable!=true){
+      Hireable.style.display = "none";
+    }
+
+
+
+
+
 
 //REPO FETCH
     let REPO_URL = `https://api.github.com/users/${e.target.previousElementSibling.textContent}/repos`;
