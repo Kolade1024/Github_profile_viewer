@@ -97,7 +97,9 @@
   background-color: rgba(0, 17, 255, 0.596);
   color: rgb(0, 0, 43);
 }
-
+.profileContainer{
+  max-width: 500px;
+}
 .profileContainer .gitHubLink {
   width: 65%;
   padding: 1rem;
@@ -269,4 +271,55 @@
 }
 .repositories .repo_Card .badges .repoDetails4 {
   background-color: rgba(255, 208, 0, 0.685);
+}
+
+
+@media only screen and (min-width: 600px) {
+
+
+
+  .innerContainer .return {
+   max-width: 250px;
+  }
+
+  .innerContainer .mainAvatar {
+    position: absolute;
+    max-width: 500px;
+    
+  }
+  .innerContainer .accent {
+   max-width: 500px;
+  }
+
+  .repositories .repo_Card .badges {
+    justify-content: flex-start;
+  }
+  .repositories .repo_Card .badges div {
+    max-width: 70px;
+  }
+
+  .repositories{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem 5rem 5rem;
+  }
+
+  .userSocials{
+    max-width: 500px;
+  }
+
+  .userSocials .location {
+    border-right: none;
+    padding-right: 2.7rem;
+  }
+
+  .accountDetails{
+    max-width: 800px;
+  }
+
+ 
+
+  
 }

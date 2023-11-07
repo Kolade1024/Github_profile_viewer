@@ -78,6 +78,7 @@ footer .logo {
   gap: 1rem;
   width: 100%;
   margin-bottom: 3rem;
+  max-width: 700px;
 }
 
 .searchbar #search {
@@ -107,13 +108,14 @@ footer .logo {
 .search_result {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: flex-start;
+  /* flex-direction: column; */
   width: 88%;
   padding: 1rem;
   border-top: 1px solid grey;
   gap: 1rem;
   margin-bottom: 7rem;
+  flex-wrap: wrap;
 }
 
 .search_result .result {
@@ -124,6 +126,9 @@ footer .logo {
   border-radius: 2rem;
   background: #ffffff;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+.search_result .result:hover {
+background-color: rgba(128, 128, 128, 0.123);
 }
 
 .search_result .result .avatar {
@@ -157,4 +162,20 @@ footer .logo {
 
 .search_result .result .user button:hover {
   color: rgb(3, 62, 255);
+}
+
+
+/* LARGER SCREENS */
+@media only screen and (min-width: 600px) {
+  .searchbar{
+    position: absolute;
+    top: 150px;
+    left: 1%;
+  }
+
+  .search_result .result{
+    flex: 1 1 250px;
+    max-width: 250px;
+  }
+
 }
