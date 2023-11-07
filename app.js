@@ -7,6 +7,7 @@ const AVATAR = document.querySelector(".search_result .result .avatar img");
 const NextPage = document.querySelector(".innerContainer");
 const backBTN = NextPage.querySelector(".return");
 const HEADER = document.querySelector(".container header");
+const REPOSITORIES = document.querySelector(".repositories");
 
 
 
@@ -134,7 +135,100 @@ if(e.target.tagName=="BUTTON"){
     let REPO_URL = `https://api.github.com/users/${e.target.previousElementSibling.textContent}/repos`;
     let repoFetch  = await fetch(REPO_URL);
     let repodata = await repoFetch.json();
-    console.log(repodata);
+    console.log(repodata[0]);
+
+    repodata.forEach((repo)=>{
+      let repoCard = document.createElement("div");
+      repoCard.className = "repo_Card";
+      let repoLink = document.createElement("a");
+      let repoLinkImage = document.createElement("img");
+      repoLinkImage.src = "/link.svg";
+      let repoName = document.createElement("span");
+      repoName.className = "repoName";
+      let repoDescription = document.createElement("p");
+      repoDescription.textContent = repo.description;
+      let badges = document.createElement("div");
+      badges.className = "badges";
+      let repoDetails1 = document.createElement("div");
+      
+      let repoIcon1 = document.createElement("span");
+      let img_a = document.createElement("img");
+      let img_b = document.createElement("img");
+      let img_c = document.createElement("img");
+      let img_d = document.createElement("img");
+
+      let iconValue1 = document.createElement("span");
+     
+      let repoDetails2 = document.createElement("div");
+      let repoIcon2 = document.createElement("span");
+      let iconValue2 = document.createElement("span");
+      let repoDetails3 = document.createElement("div");
+      let repoIcon3 = document.createElement("span");
+      let iconValue3 = document.createElement("span");
+      let repoDetails4 = document.createElement("div");
+      let repoIcon4 = document.createElement("span");
+      let iconValue4 = document.createElement("span");
+
+      repoDetails1.className = "repoDetails1";
+      repoDetails2.className = "repoDetails2";
+      repoDetails3.className = "repoDetails3";
+      repoDetails4.className = "repoDetails4";
+
+      repoIcon1.className = "repoIcon";
+      repoIcon2.className = "repoIcon";
+      repoIcon3.className = "repoIcon";
+      repoIcon4.className = "repoIcon";
+
+      img_a.src = "/a.svg";
+      img_b.src = "/b.svg";
+      img_c.src = "/c.svg";
+      img_d.src = "/d.svg";
+
+      repoName.textContent = repo.name;
+
+      iconValue1.textContent = repo.watchers;
+      iconValue2.textContent = repo.stargazers_count;
+      iconValue3.textContent = repo.open_issues;
+      iconValue4.textContent = repo.forks;
+
+      repoIcon1.appendChild(img_a);
+      repoDetails1.appendChild(repoIcon1);
+      repoDetails1.appendChild(iconValue1);
+
+      repoIcon2.appendChild(img_b);
+      repoDetails2.appendChild(repoIcon2);
+      repoDetails2.appendChild(iconValue2);
+
+      repoIcon3.appendChild(img_c);
+      repoDetails3.appendChild(repoIcon3);
+      repoDetails3.appendChild(iconValue3);
+
+      repoIcon4.appendChild(img_d);
+      repoDetails4.appendChild(repoIcon4);
+      repoDetails4.appendChild(iconValue4);
+
+      badges.appendChild(repoDetails1);
+      badges.appendChild(repoDetails2);
+      badges.appendChild(repoDetails3);
+      badges.appendChild(repoDetails4);
+
+      repoLink.appendChild(repoLinkImage);
+      repoLink.appendChild(repoName);
+      repoCard.appendChild(repoLink);
+      repoCard.appendChild(repoDescription);
+      repoCard.appendChild(badges);
+
+      REPOSITORIES.appendChild(repoCard);
+
+
+      
+
+
+
+
+
+    })
+
   }
   fetchProfile();
 }
@@ -148,5 +242,18 @@ backBTN.addEventListener("click",(e)=>{
   RESULT_SECTION.style.display = "flex";
   NextPage.style.display = "none";
   HEADER.style.marginBottom = "10rem";
+  let REPO_CARDS = document.querySelectorAll(".repo_Card");
+  REPO_CARDS.forEach((card)=>{
+    card.parentElement.removeChild(card);
+  })
 })
  
+
+
+
+
+
+
+
+
+
