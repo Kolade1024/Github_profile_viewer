@@ -56,6 +56,7 @@ fetchUsers();
  
 RESULT_SECTION.addEventListener("click", (e)=>{
   e.preventDefault();
+  HEADER.style.marginBottom = "3rem";
   
 
 if(e.target.tagName=="BUTTON"){
@@ -81,16 +82,48 @@ if(e.target.tagName=="BUTTON"){
     let Hireable = document.querySelector(".userDetails .profileContainer .userbadge .hireable");
     let jobTitle = document.querySelector(".userDetails .profileContainer .jobTitle");
     let githubLink = document.querySelector(".userDetails .profileContainer .gitHubLink a");
+    let location = document.querySelector(".userSocials .location .address");
+    let website = document.querySelector(".userSocials .Website .address a");
+    let followers = document.querySelector(".accountDetails .followers .number");
+    let following = document.querySelector(".accountDetails .following .number");
+    let publicRepos = document.querySelector(".accountDetails .public_repos .number");
+    let publicGist = document.querySelector(".accountDetails .public_Gist .number");
     avatarContainer.style.backgroundImage = `url(${data.avatar_url})`; 
     avatarName.textContent = data.name;
     avatarUserName.textContent = data.login;
     mainName.textContent = data.name;
     jobTitle.textContent = data.bio;
     userTag.textContent = data.type;
+    githubLink.href = data.html_url;
 
     if(data.hireable!=true){
       Hireable.style.display = "none";
     }
+
+    if(data.location == null){
+      location.parentElement.style.display = "none";
+    }else{
+      location.textContent = data.location;
+    }
+
+    if(data.blog==""){
+      website.parentElement.parentElement.style.display ="none";
+    }else{
+      website.textContent = data.blog;
+    }
+
+    if((data.location==null) && (data.blog=="")){
+      location.parentElement.parentElement.style.display = "none";
+    }
+
+    followers.textContent = data.followers;
+    following.textContent = data.following;
+    publicRepos.textContent = data.public_repos;
+    publicGist.textContent = data.public_gists;
+
+
+   
+   
 
 
 
