@@ -8,22 +8,26 @@ const NextPage = document.querySelector(".innerContainer");
 const backBTN = NextPage.querySelector(".return");
 const HEADER = document.querySelector(".container header");
 const REPOSITORIES = document.querySelector(".repositories");
+const LOADER = document.querySelector(".loader");
 
 
 
 
 SEARCH_BTN.addEventListener("click", (e)=>{
+
   e.preventDefault();
+  
   RESULT_SECTION.innerHTML = "";
+  LOADER.style.display = "block";
   let username = inputField.value;
   let API_URL = `https://api.github.com/search/users?q=${username}`;
   
-
+  
   
   let fetchUsers = async ()=>{
     let response  = await fetch(API_URL);
+    
     let data = await response.json();
-    console.log(data.items);
     
     data.items.forEach(element => {
       let result = document.createElement("div");
@@ -47,12 +51,14 @@ SEARCH_BTN.addEventListener("click", (e)=>{
       result.appendChild(user);
 
       RESULT_SECTION.appendChild(result);
+      LOADER.style.display = "none";
     });
 
   
      
 }
-fetchUsers();
+setTimeout(fetchUsers,1000);
+
 });
  
 RESULT_SECTION.addEventListener("click", (e)=>{
