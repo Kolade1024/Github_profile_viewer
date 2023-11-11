@@ -19,9 +19,11 @@ SEARCH_BTN.addEventListener("click", (e)=>{
   e.preventDefault();
   if (inputField.value == ""){
     inputField.style.border = "2px solid red";
+    inputField.style.background = "rgba(255, 0, 0, 0.26)";
     SEARCH_BTN.style.color = "red";
     SEARCH_BTN.style.transition = "0s";
   }else{
+    inputField.style.background = "rgba(48, 46, 46, 0.26)"
     SEARCH_BTN.style.color = "black";
     inputField.style.border = "1px solid rgba(48, 46, 46, 0.06)";
     RESULT_SECTION.innerHTML = "";
