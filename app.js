@@ -9,6 +9,7 @@ const backBTN = NextPage.querySelector(".return");
 const HEADER = document.querySelector(".container header");
 const REPOSITORIES = document.querySelector(".repositories");
 const LOADER = document.querySelector(".loader");
+const ERROR_MSG = document.querySelector(".errorMsg");
 
 
 
@@ -16,8 +17,14 @@ const LOADER = document.querySelector(".loader");
 SEARCH_BTN.addEventListener("click", (e)=>{
 
   e.preventDefault();
-  
-  RESULT_SECTION.innerHTML = "";
+  if (inputField.value == ""){
+    inputField.style.border = "2px solid red";
+    SEARCH_BTN.style.color = "red";
+    SEARCH_BTN.style.transition = "0s";
+  }else{
+    SEARCH_BTN.style.color = "black";
+    inputField.style.border = "1px solid rgba(48, 46, 46, 0.06)";
+    RESULT_SECTION.innerHTML = "";
   LOADER.style.display = "block";
   let username = inputField.value;
   let API_URL = `https://api.github.com/search/users?q=${username}`;
@@ -26,6 +33,12 @@ SEARCH_BTN.addEventListener("click", (e)=>{
   
   let fetchUsers = async ()=>{
     let response  = await fetch(API_URL);
+
+    if (response.status == 404){
+      ERROR_MSG.style.display = "block";
+    }else{
+      ERROR_MSG.style.display = "none";
+    }
     
     let data = await response.json();
     
@@ -49,16 +62,23 @@ SEARCH_BTN.addEventListener("click", (e)=>{
       user.appendChild(button);
       result.appendChild(avatar);
       result.appendChild(user);
-
-      RESULT_SECTION.appendChild(result);
-      LOADER.style.display = "none";
+      let loaderFunc = ()=>{
+        LOADER.style.display = "none";
+        RESULT_SECTION.appendChild(result);
+      }
+      setTimeout(loaderFunc, 1000);
+      
+     
     });
 
   
      
 }
-setTimeout(fetchUsers,1000);
+fetchUsers();
 
+  }
+  
+  
 });
  
 RESULT_SECTION.addEventListener("click", (e)=>{
@@ -147,6 +167,7 @@ if(e.target.tagName=="BUTTON"){
       let repoCard = document.createElement("div");
       repoCard.className = "repo_Card";
       let repoLink = document.createElement("a");
+      repoLink.href = repo.html_url;
       let repoLinkImage = document.createElement("img");
       repoLinkImage.src = "/link.svg";
       let repoName = document.createElement("span");

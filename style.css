@@ -13,7 +13,9 @@ body {
 }
 
  .loader{
-  display: none;
+  position: relative;
+  bottom: 8rem;
+  display:none;
 }
 
 .container {
@@ -85,6 +87,19 @@ footer .logo {
   max-width: 700px;
 }
 
+.errorMsg{
+  color: grey;
+  display: flex;
+  gap: 1rem;
+  display: none;
+}
+.errorMsg i {
+  font-size: 3rem;
+}
+.errorMsg span {
+  font-size: 2rem;
+}
+
 .searchbar #search {
   width: 70%;
   padding: 1rem;
@@ -95,6 +110,8 @@ footer .logo {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(48, 46, 46, 0.06);
+  transform: translateX(2px);
+  outline: none;
 }
 
 .searchbar button {
